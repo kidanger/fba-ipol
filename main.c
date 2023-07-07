@@ -72,8 +72,8 @@ int main(int argc, char** argv)
     int w=0, h=0, d=0;
     for (int i = 0; i < n; i++)
     {
-        int ww, hh, dd;
-        float* data = iio_read_image_float_vec(argv[arg++], &ww, &hh, &dd);
+        int ww, hh, dd=3;
+        float* data = iio_read_image_float_rgb(argv[arg++], &ww, &hh);
         if (!data) {
             fprintf(stderr, "%s: cannot open file", argv[arg-1]);
             return EXIT_FAILURE;
